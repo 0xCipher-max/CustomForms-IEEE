@@ -20,8 +20,11 @@
             <a href="{% url 'view_form' form.code %}">
             <img src="{% static 'Icon/eye.png' %}" alt="Preview icon" title = "Preview" class="nav-form-menu-icon big-screen" />
             </a>
+            <img src="/static/Icon/dustbin.png" alt="Delete question icon" class="nav-form-menu-icon" id = "delete-form" title="Delete Form">
+
             <img src="{% static 'Icon/send.png' %}" alt ="Send icon" title = "Send" class="nav-form-menu-icon small-screen" id="send-form-btn" />
-            <img src="{% static 'Icon/setting.png' %}" alt="Setting icon" title = "Setting" class="nav-form-menu-icon open-setting" />
+            {% comment %} <img src="{% static 'Icon/setting.png' %}" alt="Setting icon" title = "Setting" class="nav-form-menu-icon open-setting" /> {% endcomment %}
+
             <button class = "btn send-form-btn big-screen" title = "Send" id="send-form-btn">Send</button>
         </div>
     </div>
