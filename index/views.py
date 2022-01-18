@@ -471,12 +471,8 @@ def submit_form(request, code):
             response = Responses(response_code = code, response_to = formInfo, responder_ip = get_client_ip(request), responder = request.user)
             response.save()
         else:
-            if not formInfo.collect_email:
-                response = Responses(response_code = code, response_to = formInfo, responder_ip = get_client_ip(request))
-                response.save()
-            else:
-                response = Responses(response_code = code, response_to = formInfo, responder_ip = get_client_ip(request), responder_email=request.POST["email-address"])
-                response.save()
+            response = Responses(response_code = code, response_to = formInfo, responder_ip = get_client_ip(request), responder_email=request.POST["email-address"])
+            response.save()
         for i in request.POST:
             #Excluding csrf token
             if i == "csrfmiddlewaretoken" or i == "email-address":

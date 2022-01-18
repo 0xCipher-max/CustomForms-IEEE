@@ -48,14 +48,14 @@
             </div>
             <textarea class="form-description edit-on-click textarea-adjust txt-clr" rows="1" placeholder="Form description" spellCheck = "false"
             id="input-form-description">{{form.description}}</textarea>
-            {% if form.collect_email %}
+            
             <div class="collect-email txt-clr">
                 <h3 class="question-title">Email address <span class="require-star">*</span></h3>
                 <input type="text" autocomplete="off" aria-label="Valid email address" disabled dir = "auto" class="require-email-edit txtColor"
                 placeholder = "Valid email address" />
                 <p class="collect-email-desc">This form is collecting email addresses. <span class="open-setting">Change settings</span></p>
             </div>
-            {% endif %}
+          
         </div>
         {% for question in form.questions.all %}
         <div class="margin-top-bottom box question-box question" data-id="{{question.id}}">

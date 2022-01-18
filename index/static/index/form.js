@@ -69,17 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     })
-    document.querySelectorAll(".open-setting").forEach(ele => {
-        ele.addEventListener('click', () => {
-            document.querySelector("#setting").style.display = "block";
-        })
-        document.querySelector("#close-setting").addEventListener('click', () => {
-            document.querySelector("#setting").style.display = "none";
-        })
-        window.onclick = e => {
-            if(e.target == document.querySelector("#setting")) document.querySelector("#setting").style.display = "none";
-        }
-    })
+    // document.querySelectorAll(".open-setting").forEach(ele => {
+    //     ele.addEventListener('click', () => {
+    //         document.querySelector("#setting").style.display = "block";
+    //     })
+    //     document.querySelector("#close-setting").addEventListener('click', () => {
+    //         document.querySelector("#setting").style.display = "none";
+    //     })
+    //     window.onclick = e => {
+    //         if(e.target == document.querySelector("#setting")) document.querySelector("#setting").style.display = "none";
+    //     }
+    // })
     document.querySelectorAll("#send-form-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelector("#send-form").style.display = "block";

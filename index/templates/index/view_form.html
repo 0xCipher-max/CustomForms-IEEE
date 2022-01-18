@@ -17,12 +17,12 @@
             </div>
             <div class="form-description txtClr">{{form.description|linebreaksbr}}</div>
         </div>
-        {% if form.collect_email %}
+        
         <div class="margin-top-bottom box question-box">
             <h1 class="question-title txtClr">Email address: <span class="require-star">*</span></h1>
             <input type="email" name="email-address" class="short-answer" placeholder="Your email address" required>
         </div>
-        {% endif %}
+        
         {% for question in form.questions.all %}
         <div class="margin-top-bottom box question-box">
             <h1 class="question-title txtClr">{{question.question}} {% if question.required %}<span class="require-star">*</span>{% endif %}</h1>

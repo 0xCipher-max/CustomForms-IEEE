@@ -6,6 +6,7 @@
 {% block title %}{{form.title}}'s response ~ IEEE Custom Forms{% endblock %}
 {% block script %}
 <script src="{% static 'index/responses.js' %}" defer></script>
+<script src="{% static 'index/form.js' %}" defer></script>
 <script src="{% static 'lib/cookie.min.js' %}"></script>
 {% endblock %}
 {% block body %}
@@ -44,13 +45,9 @@
             <h1 class="response-title">Individual Response:</h1>
             <ul>
                 {% for i in responses %}
-                    {% if form.collect_email %}
+                
                         <li><a href = "{% url 'response' form.code i.response_code %}" class="link">{{i.responder_email}}'s response</a></li>
-                    {% elif form.authenticated_responder %}
-                        <li><a href = "{% url 'response' form.code i.response_code %}" class="link">{{i.responder.username}}'s response</a></li>
-                    {% else %}
-                        <li><a href = "{% url 'response' form.code i.response_code %}" class="link">{{i.responder_ip}}'s response</a></li>
-                    {% endif %}
+                    
                 {% endfor %}
             </ul>
             <button class="btn btn-danger" id="delete-responses">Delete all responses</button>
